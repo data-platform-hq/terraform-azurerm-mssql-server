@@ -1,5 +1,5 @@
-# Azure Log Analytics Workspace Terraform module
-Terraform module for creation Microsoft SQL Azure Database Server
+# Azure Microsoft SQL Database Server Terraform module
+Terraform module for creation Azure Microsoft SQL Database Server
 
 ## Usage
 
