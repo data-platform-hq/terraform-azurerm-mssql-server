@@ -1,4 +1,3 @@
-# Required
 variable "project" {
   type        = string
   description = "Project name"
@@ -39,7 +38,6 @@ variable "azure_ad_admin_object_id" {
   description = "The object id of the Azure AD Administrator of this SQL Server"
 }
 
-# Optional
 variable "server_version" {
   type        = string
   description = "Server version"
@@ -79,9 +77,11 @@ variable "ip_rules" {
 variable "key_vault_id" {
   type        = string
   description = "Key Vault Id"
+  default     = ""
 }
 
 variable "tde_key" {
   type        = string
   description = "Transparent data encryption key id"
+  default     = ""
 }
