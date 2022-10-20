@@ -3,16 +3,16 @@ locals {
 }
 
 resource "azurerm_mssql_server" "this" {
-  name                         = "mssql-${var.project}-${var.env}-${var.location}"
-  resource_group_name          = var.resource_group
-  location                     = var.location
-  version                      = var.server_version
-  administrator_login          = var.admin_login
-  administrator_login_password = var.admin_password
-  minimum_tls_version          = var.minimum_tls_version
-  public_network_enabled       = var.public_network_enabled
-  connection_policy            = var.connection_policy
-  tags                         = var.tags
+  name                          = "mssql-${var.project}-${var.env}-${var.location}"
+  resource_group_name           = var.resource_group
+  location                      = var.location
+  version                       = var.server_version
+  administrator_login           = var.admin_login
+  administrator_login_password  = var.admin_password
+  minimum_tls_version           = var.minimum_tls_version
+  public_network_access_enabled = var.public_network_access_enabled
+  connection_policy             = var.connection_policy
+  tags                          = var.tags
 
   lifecycle {
     ignore_changes = [
