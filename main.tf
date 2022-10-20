@@ -1,5 +1,5 @@
 locals {
-  ip_rules = { for e in [for k, ip in var.ip_rules : try(regex("/", ip), 0) != 0 ? { "${k}" = { start_ip_address = cidrhost(ip, 0), end_ip_address = cidrhost(ip, -1) } } : { "${k}" = { start_ip_address = ip, end_ip_address = ip } }] : keys(e)[0] => e[keys(e)[0]] }
+  ip_rules = { for e in [for k, ip in var.ip_rules : try(regex("/", ip), 0) != 0 ? { (k) = { start_ip_address = cidrhost(ip, 0), end_ip_address = cidrhost(ip, -1) } } : { (k) = { start_ip_address = ip, end_ip_address = ip } }] : keys(e)[0] => e[keys(e)[0]] }
 }
 
 resource "azurerm_mssql_server" "this" {
