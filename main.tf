@@ -10,6 +10,8 @@ resource "azurerm_mssql_server" "this" {
   administrator_login          = var.admin_login
   administrator_login_password = var.admin_password
   minimum_tls_version          = var.minimum_tls_version
+  public_network_enabled       = var.public_network_enabled
+  connection_policy            = var.connection_policy
   tags                         = var.tags
 
   lifecycle {
