@@ -2,7 +2,6 @@ locals {
   ip_rules = { for e in [for k, ip in var.ip_rules : try(regex("/", ip), 0) != 0 ? { "${k}" = { start_ip_address = cidrhost(ip, 0), end_ip_address = cidrhost(ip, -1) } } : { "${k}" = { start_ip_address = ip, end_ip_address = ip } }] : keys(e)[0] => e[keys(e)[0]] }
 }
 
-# Server
 resource "azurerm_mssql_server" "this" {
   name                         = "mssql-${var.project}-${var.env}-${var.location}"
   resource_group_name          = var.resource_group
@@ -31,6 +30,8 @@ resource "azurerm_mssql_server" "this" {
 }
 
 resource "azurerm_key_vault_access_policy" "tde_policy" {
+  count = length(var.key_vault_id) == 0 ? 0 : 1
+
   key_vault_id = var.key_vault_id
   tenant_id    = azurerm_mssql_server.this.identity[0].tenant_id
   object_id    = azurerm_mssql_server.this.identity[0].principal_id
@@ -43,11 +44,12 @@ resource "azurerm_key_vault_access_policy" "tde_policy" {
 }
 
 resource "azurerm_mssql_server_transparent_data_encryption" "this" {
+  count = length(var.tde_key) == 0 ? 0 : 1
+
   server_id        = azurerm_mssql_server.this.id
   key_vault_key_id = var.tde_key
 }
 
-# Firewall rules
 resource "azurerm_mssql_firewall_rule" "this" {
   for_each = local.ip_rules
 
