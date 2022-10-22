@@ -1,3 +1,11 @@
+## [1.0.1](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/compare/v1.0.0...v1.0.1) (2022-10-22)
+
+
+### Bug Fixes
+
+* corrected resource_group description in the README.md ([9b2722c](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/commit/9b2722c02858c112f3802de70423b78ce87a540e))
+* removed broken condition ([58036ac](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/commit/58036ace626980c4f0178478b29fc830a9a5026a))
+
 # 1.0.0 (2022-10-20)
 
 
