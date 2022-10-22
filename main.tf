@@ -32,8 +32,6 @@ resource "azurerm_mssql_server" "this" {
 }
 
 resource "azurerm_key_vault_access_policy" "tde_policy" {
-  count = length(var.key_vault_id) == 0 ? 0 : 1
-
   key_vault_id = var.key_vault_id
   tenant_id    = azurerm_mssql_server.this.identity[0].tenant_id
   object_id    = azurerm_mssql_server.this.identity[0].principal_id
@@ -46,8 +44,6 @@ resource "azurerm_key_vault_access_policy" "tde_policy" {
 }
 
 resource "azurerm_mssql_server_transparent_data_encryption" "this" {
-  count = length(var.tde_key) == 0 ? 0 : 1
-
   server_id        = azurerm_mssql_server.this.id
   key_vault_key_id = var.tde_key
 }
