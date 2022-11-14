@@ -60,8 +60,6 @@ resource "azurerm_mssql_server_transparent_data_encryption" "this" {
 
   server_id        = azurerm_mssql_server.this.id
   key_vault_key_id = azurerm_key_vault_key.this[each.key].id
-  
-  depends_on = [azurerm_key_vault_key.this]
 }
 
 resource "azurerm_mssql_firewall_rule" "this" {
