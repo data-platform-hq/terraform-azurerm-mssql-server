@@ -1,3 +1,14 @@
+## [1.0.2](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/compare/v1.0.1...v1.0.2) (2022-11-14)
+
+
+### Bug Fixes
+
+* change description ([f6f3e5b](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/commit/f6f3e5b68abfafe5e0fc4128e4d22bbe88c78702))
+* changed description key_vault_id ([39ea1f5](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/commit/39ea1f54ee2a5cf2d926fbc9af8f0b3fe05767ff))
+* changed description variable type ([82be1fc](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/commit/82be1fc5f292229c213395c174e28d138be6751a))
+* delete variable description tdekey ([38061dc](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/commit/38061dcdd950dcf561c2e496bcb608c8339f6b95))
+* key-vault-key ([214b563](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/commit/214b56329594da1422a5169de7dc037ca66cc8b0))
+
 ## [1.0.1](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/compare/v1.0.0...v1.0.1) (2022-10-22)
 
 
