@@ -32,7 +32,9 @@ resource "azurerm_mssql_server" "this" {
 }
 
 resource "azurerm_key_vault_access_policy" "tde_policy" {
-  key_vault_id = var.key_vault_id
+  for_each = { for k, v in var.key_vault_id : k => v }
+
+  key_vault_id = each.value
   tenant_id    = azurerm_mssql_server.this.identity[0].tenant_id
   object_id    = azurerm_mssql_server.this.identity[0].principal_id
 
@@ -43,9 +45,21 @@ resource "azurerm_key_vault_access_policy" "tde_policy" {
   ]
 }
 
+resource "azurerm_key_vault_key" "this" {
+  for_each = { for k, v in var.key_vault_id : k => v }
+
+  name         = "tde-${var.project}-${var.env}-${var.location}"
+  key_type     = var.key_type
+  key_size     = var.key_size
+  key_vault_id = each.value
+  key_opts     = var.key_opts
+}
+
 resource "azurerm_mssql_server_transparent_data_encryption" "this" {
+  for_each = { for k, v in var.key_vault_id : k => v }
+
   server_id        = azurerm_mssql_server.this.id
-  key_vault_key_id = var.tde_key
+  key_vault_key_id = azurerm_key_vault_key.this[each.key].id
 }
 
 resource "azurerm_mssql_firewall_rule" "this" {

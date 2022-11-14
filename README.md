@@ -30,6 +30,7 @@ No modules.
 | [azurerm_mssql_server_transparent_data_encryption.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mssql_server_transparent_data_encryption) | resource |
 | [azurerm_mssql_firewall_rule.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mssql_firewall_rule)                                           | resource |
 | [azurerm_mssql_firewall_rule.azure_services](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mssql_firewall_rule)                                 | resource |
+| [azurerm_key_vault_key.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_key) | resource |
 
 ## Inputs
 
@@ -49,8 +50,10 @@ No modules.
 | <a name="input_public_network_access_enabled"></a> [public\_network\_access\_enabled](#input\_public\_network\_access\_enabled) | Whether public network access is allowed for this server                                                                      | `bool`        | true    |    no    |
 | <a name="input_tags"></a> [tags](#input\_tags)                                                                                  | A mapping of tags to assign to the resource                                                                                   | `map(any)`    | {}      |    no    |
 | <a name="input_ip_rules"></a> [ip\_rules](#input\_ip\_rules)                                                                    | Map of IP addresses permitted for access to DB                                                                                | `map(string)` | {}      |    no    |
-| <a name="input_key_vault_id"></a> [key\_vault\_id](#input\_key\_vault\_id)                                                      | Key Vault Id                                                                                                                  | `string`      | ""      |    no    |
-| <a name="input_tde_key"></a> [tde\_key](#input\_tde\_key)                                                                       | Transparent data encryption key id                                                                                            | `string`      | ""      |    no    |
+| <a name="input_key_vault_id"></a> [key\_vault\_id](#input\_key\_vault\_id)                                                      | Key Vault Id                                                                                                                  | `map(string)`      | {}      |    no    |
+| <a name="input_key_opts"></a> [key\_opts](#input\_key\_opts) | JSON web key operations: [decrypt\|encrypt\|sign\|unwrapKey\|verify\|wrapKey] | `list(string)` | <pre>[<br>  "decrypt",<br>  "encrypt",<br>  "sign",<br>  "unwrapKey",<br>  "verify",<br>  "wrapKey"<br>]</pre> | no |
+| <a name="input_key_size"></a> [key\_size](#input\_key\_size) | Size of the RSA key to create in bytes, requied for RSA & RSA-HSM: [1024\|2048] | `number` | `2048` | no |
+| <a name="input_key_type"></a> [key\_type](#input\_key\_type) | Key Type to use for this Key Vault Key: [EC\|EC-HSM\|Oct\|RSA\|RSA-HSM] | `string` | `"RSA"` | no |
 
 ## Outputs
 

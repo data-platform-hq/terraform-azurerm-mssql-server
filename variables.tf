@@ -74,14 +74,33 @@ variable "ip_rules" {
   default     = {}
 }
 
-variable "key_vault_id" {
+variable "key_type" {
   type        = string
-  description = "Key Vault Id"
-  default     = ""
+  description = "Key Type to use for this Key Vault Key: [EC|EC-HSM|Oct|RSA|RSA-HSM]"
+  default     = "RSA"
 }
 
-variable "tde_key" {
-  type        = string
-  description = "Transparent data encryption key id"
-  default     = ""
+variable "key_size" {
+  type        = number
+  description = "Size of the RSA key to create in bytes, requied for RSA & RSA-HSM: [1024|2048]"
+  default     = 2048
+}
+
+variable "key_opts" {
+  type        = list(string)
+  description = "JSON web key operations: [decrypt|encrypt|sign|unwrapKey|verify|wrapKey]"
+  default = [
+    "decrypt",
+    "encrypt",
+    "sign",
+    "unwrapKey",
+    "verify",
+    "wrapKey"
+  ]
+}
+
+variable "key_vault_id" {
+  type        = map(string)
+  description = "Key Vault ID"
+  default     = {}
 }
