@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/compare/v1.0.2...v1.0.3) (2022-12-16)
+
+
+### Bug Fixes
+
+* create output name ([05daf25](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/commit/05daf25af1a498e8684d0063e3594ce340c18fd5))
+
 ## [1.0.2](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/compare/v1.0.1...v1.0.2) (2022-11-14)
 
 
