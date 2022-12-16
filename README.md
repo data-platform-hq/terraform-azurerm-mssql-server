@@ -60,6 +60,7 @@ No modules.
 | Name                                                         | Description                                      |
 | ------------------------------------------------------------ | ------------------------------------------------ |
 | <a name="output_id"></a> [id](#output\_id)                   | Id of Azure SQL Server                           |
+| <a name="output_name"></a> [name](#output\_name)             | Azure SQL Server Name                            |
 | <a name="output_fqdn"></a> [fqdn](#output\_fqdn)             | Fully Qualified Domain Name of Azure SQL Server  |
 | <a name="output_identity"></a> [identity](#output\_identity) | Identity properties assigned to Azure SQL Server |
 <!-- END_TF_DOCS -->
