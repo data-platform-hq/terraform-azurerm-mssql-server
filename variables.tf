@@ -104,3 +104,14 @@ variable "key_vault_id" {
   description = "Key Vault ID"
   default     = {}
 }
+
+variable "mssql_defender_state" {
+  description = "Manages Microsoft Defender state on the mssql server"
+  type        = string
+  default     = null
+
+  validation {
+    condition     = var.mssql_defender_state != null ? contains(["Enabled", "Disabled"], var.mssql_defender_state) : true
+    error_message = "The only allowed values for variable are: 'Enabled' or 'Disabled"
+  }
+}

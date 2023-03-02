@@ -77,3 +77,11 @@ resource "azurerm_mssql_firewall_rule" "azure_services" {
   start_ip_address = "0.0.0.0"
   end_ip_address   = "0.0.0.0"
 }
+
+resource "azurerm_mssql_server_security_alert_policy" "this" {
+  count = var.mssql_defender_state == null ? 0 : 1
+
+  resource_group_name = var.resource_group
+  server_name         = azurerm_mssql_server.this.name
+  state               = var.mssql_defender_state
+}
