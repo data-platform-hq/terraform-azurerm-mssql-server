@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/compare/v1.0.3...v1.1.0) (2023-03-02)
+
+
+### Bug Fixes
+
+* fixed review comments ([13ec7ec](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/commit/13ec7ec974cd53dc1285c1bbe1f5c1429f9e7d46))
+
+
+### Features
+
+* added management of the mssql defender ([aede9e0](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/commit/aede9e0041eb06060accbbc20fa3002ee816759b))
+
 ## [1.0.3](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/compare/v1.0.2...v1.0.3) (2022-12-16)
 
 
