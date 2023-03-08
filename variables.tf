@@ -38,6 +38,18 @@ variable "azure_ad_admin_object_id" {
   description = "The object id of the Azure AD Administrator of this SQL Server"
 }
 
+variable "custom_mssql_server_name" {
+  type        = string
+  description = "The name of the Microsoft SQL Server"
+  default     = null
+}
+
+variable "custom_tde_key_name" {
+  type        = string
+  description = "Specifies the name of the Key Vault Key"
+  default     = null
+}
+
 variable "server_version" {
   type        = string
   description = "Server version"
