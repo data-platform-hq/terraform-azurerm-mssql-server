@@ -1,3 +1,15 @@
+# [1.2.0](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/compare/v1.1.0...v1.2.0) (2023-03-09)
+
+
+### Bug Fixes
+
+* updated provider ([80950fe](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/commit/80950feafd43310f97efdb582845eeb49800285a))
+
+
+### Features
+
+* added custom names for resources ([b9b06a7](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/commit/b9b06a7da624813cf026935f7bc53250fbc4d3ca))
+
 # [1.1.0](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/compare/v1.0.3...v1.1.0) (2023-03-02)
 
 
