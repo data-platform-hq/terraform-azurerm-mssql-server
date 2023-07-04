@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/compare/v1.2.0...v1.2.1) (2023-07-04)
+
+
+### Bug Fixes
+
+* GetRotationPolicy added to key permissions ([733ec2b](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/commit/733ec2b34cd0549f5e10563474a822ee5eae0db6))
+
 # [1.2.0](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/compare/v1.1.0...v1.2.0) (2023-03-09)
 
 
