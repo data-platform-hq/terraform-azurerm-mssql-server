@@ -43,7 +43,8 @@ resource "azurerm_key_vault_access_policy" "tde_policy" {
   key_permissions = [
     "Get",
     "WrapKey",
-    "UnwrapKey"
+    "UnwrapKey",
+    "GetRotationPolicy"
   ]
 }
 
