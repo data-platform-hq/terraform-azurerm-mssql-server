@@ -19,7 +19,6 @@ resource "azurerm_mssql_server" "this" {
     ignore_changes = [
       administrator_login,
       administrator_login_password,
-      transparent_data_encryption_key_vault_key_id,
     ]
   }
 
