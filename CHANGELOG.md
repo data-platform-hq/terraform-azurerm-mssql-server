@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/compare/v1.2.1...v1.3.0) (2023-07-20)
+
+
+### Features
+
+* removed tde key creation; updated default policy ([bd68e58](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/commit/bd68e58b68688185001ca44e27d0a0ab7943c190))
+
 ## [1.2.1](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/compare/v1.2.0...v1.2.1) (2023-07-04)
 
 
