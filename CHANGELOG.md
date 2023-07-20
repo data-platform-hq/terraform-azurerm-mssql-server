@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/compare/v1.3.0...v1.3.1) (2023-07-20)
+
+
+### Bug Fixes
+
+* removed lifecycle ignore for tde key id ([a9a8eca](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/commit/a9a8ecae864b7bd80c5e80eb05bdec4b0b6003a2))
+
 # [1.3.0](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/compare/v1.2.1...v1.3.0) (2023-07-20)
 
 
