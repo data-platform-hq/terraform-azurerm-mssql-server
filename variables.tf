@@ -44,12 +44,6 @@ variable "custom_mssql_server_name" {
   default     = null
 }
 
-variable "custom_tde_key_name" {
-  type        = string
-  description = "Specifies the name of the Key Vault Key"
-  default     = null
-}
-
 variable "server_version" {
   type        = string
   description = "Server version"
@@ -86,35 +80,40 @@ variable "ip_rules" {
   default     = {}
 }
 
-variable "key_type" {
-  type        = string
-  description = "Key Type to use for this Key Vault Key: [EC|EC-HSM|Oct|RSA|RSA-HSM]"
-  default     = "RSA"
+variable "tde_encryption_enabled" {
+  type        = bool
+  description = "Boolean flag that enabled Transparent Data Encryption of Server"
+  default     = false
 }
 
-variable "key_size" {
-  type        = number
-  description = "Size of the RSA key to create in bytes, requied for RSA & RSA-HSM: [1024|2048]"
-  default     = 2048
-}
-
-variable "key_opts" {
+variable "tde_key_permissions" {
   type        = list(string)
-  description = "JSON web key operations: [decrypt|encrypt|sign|unwrapKey|verify|wrapKey]"
+  description = "List of tde key permissions"
   default = [
-    "decrypt",
-    "encrypt",
-    "sign",
-    "unwrapKey",
-    "verify",
-    "wrapKey"
+    "Get",
+    "WrapKey",
+    "UnwrapKey",
+    "GetRotationPolicy",
+    "SetRotationPolicy"
   ]
 }
 
 variable "key_vault_id" {
-  type        = map(string)
+  type        = string
   description = "Key Vault ID"
-  default     = {}
+  default     = null
+}
+
+variable "key_vault_key_id" {
+  type        = string
+  description = "Key Vault Key id for transparent data encryption of server"
+  default     = null
+}
+
+variable "auto_rotation_enabled" {
+  type        = bool
+  description = "Server will continuously check the key vault for any new versions of the key"
+  default     = true
 }
 
 variable "mssql_defender_state" {
