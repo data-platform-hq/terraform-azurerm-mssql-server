@@ -1,7 +1,6 @@
 locals {
-  ip_rules     = { for e in [for k, ip in var.ip_rules : try(regex("/", ip), 0) != 0 ? { (k) = { start_ip_address = cidrhost(ip, 0), end_ip_address = cidrhost(ip, -1) } } : { (k) = { start_ip_address = ip, end_ip_address = ip } }] : keys(e)[0] => e[keys(e)[0]] }
-  server_name  = var.custom_mssql_server_name == null ? "mssql-${var.project}-${var.env}-${var.location}" : var.custom_mssql_server_name
-  tde_key_name = var.custom_tde_key_name == null ? "tde-${var.project}-${var.env}-${var.location}" : var.custom_tde_key_name
+  ip_rules    = { for e in [for k, ip in var.ip_rules : try(regex("/", ip), 0) != 0 ? { (k) = { start_ip_address = cidrhost(ip, 0), end_ip_address = cidrhost(ip, -1) } } : { (k) = { start_ip_address = ip, end_ip_address = ip } }] : keys(e)[0] => e[keys(e)[0]] }
+  server_name = var.custom_mssql_server_name == null ? "mssql-${var.project}-${var.env}-${var.location}" : var.custom_mssql_server_name
 }
 
 resource "azurerm_mssql_server" "this" {
@@ -19,7 +18,8 @@ resource "azurerm_mssql_server" "this" {
   lifecycle {
     ignore_changes = [
       administrator_login,
-      administrator_login_password
+      administrator_login_password,
+      transparent_data_encryption_key_vault_key_id,
     ]
   }
 
@@ -34,39 +34,22 @@ resource "azurerm_mssql_server" "this" {
 }
 
 resource "azurerm_key_vault_access_policy" "tde_policy" {
-  for_each = { for k, v in var.key_vault_id : k => v }
+  count = var.tde_encryption_enabled ? 1 : 0
 
-  key_vault_id = each.value
-  tenant_id    = azurerm_mssql_server.this.identity[0].tenant_id
-  object_id    = azurerm_mssql_server.this.identity[0].principal_id
-
-  key_permissions = [
-    "Get",
-    "WrapKey",
-    "UnwrapKey",
-    "GetRotationPolicy"
-  ]
-}
-
-resource "azurerm_key_vault_key" "this" {
-  for_each = { for k, v in var.key_vault_id : k => v }
-
-  name         = local.tde_key_name
-  key_type     = var.key_type
-  key_size     = var.key_size
-  key_vault_id = each.value
-  key_opts     = var.key_opts
-
-  depends_on = [
-    azurerm_key_vault_access_policy.tde_policy
-  ]
+  key_vault_id    = var.key_vault_id
+  tenant_id       = azurerm_mssql_server.this.identity[0].tenant_id
+  object_id       = azurerm_mssql_server.this.identity[0].principal_id
+  key_permissions = var.tde_key_permissions
 }
 
 resource "azurerm_mssql_server_transparent_data_encryption" "this" {
-  for_each = { for k, v in var.key_vault_id : k => v }
+  count = var.tde_encryption_enabled ? 1 : 0
 
-  server_id        = azurerm_mssql_server.this.id
-  key_vault_key_id = azurerm_key_vault_key.this[each.key].id
+  server_id             = azurerm_mssql_server.this.id
+  key_vault_key_id      = var.key_vault_key_id
+  auto_rotation_enabled = var.auto_rotation_enabled
+
+  depends_on = [azurerm_key_vault_access_policy.tde_policy]
 }
 
 resource "azurerm_mssql_firewall_rule" "this" {
