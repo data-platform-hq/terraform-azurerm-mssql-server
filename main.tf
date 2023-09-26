@@ -49,11 +49,6 @@ resource "azurerm_mssql_server_transparent_data_encryption" "this" {
   key_vault_key_id      = var.key_vault_key_id
   auto_rotation_enabled = var.auto_rotation_enabled
 
-  # When automated TDE Key rotation is enabled, it is required to ignore new Key id for state consistency. 
-  lifecycle {
-    ignore_changes = [key_vault_key_id]
-  }
-
   depends_on = [azurerm_key_vault_access_policy.tde_policy]
 }
 
