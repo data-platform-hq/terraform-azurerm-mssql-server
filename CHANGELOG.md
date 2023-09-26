@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/compare/v1.3.1...v1.3.2) (2023-09-26)
+
+
+### Bug Fixes
+
+* ignore tde key id on rotation ([80b3d4e](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/commit/80b3d4e4f6cc956860ff470be276b17f21d3c916))
+
 ## [1.3.1](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/compare/v1.3.0...v1.3.1) (2023-07-20)
 
 
