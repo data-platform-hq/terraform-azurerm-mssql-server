@@ -1,3 +1,11 @@
+## [1.3.3](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/compare/v1.3.2...v1.3.3) (2023-09-26)
+
+
+### Bug Fixes
+
+* removed ignore on key resource ([d3b4e24](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/commit/d3b4e24fa6dddd0fda34217f8c5d0becfdde4f47))
+* tde changes ignore ([4fd579c](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/commit/4fd579cf771cca343a6c0e18c002d4d753e22e86))
+
 ## [1.3.2](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/compare/v1.3.1...v1.3.2) (2023-09-26)
 
 
