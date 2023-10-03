@@ -50,6 +50,10 @@ resource "azurerm_mssql_server_transparent_data_encryption" "this" {
   auto_rotation_enabled = var.auto_rotation_enabled
 
   depends_on = [azurerm_key_vault_access_policy.tde_policy]
+
+  lifecycle {
+    ignore_changes = [key_vault_key_id]
+  }
 }
 
 resource "azurerm_mssql_firewall_rule" "this" {
