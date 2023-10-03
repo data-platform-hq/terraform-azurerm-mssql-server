@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/compare/v1.3.3...v1.4.0) (2023-10-03)
+
+
+### Features
+
+* support automated tde keys rotation ([6db0914](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/commit/6db09148d70e68b749d37652366a46ec0b633415))
+
 ## [1.3.3](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/compare/v1.3.2...v1.3.3) (2023-09-26)
 
 
