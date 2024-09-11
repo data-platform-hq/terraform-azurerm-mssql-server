@@ -33,7 +33,7 @@ variable "azure_ad_admin_login" {
   description = "The login username of the Azure AD Administrator of this SQL Server."
 }
 
-variable "azure_ad_admin_object_id" {
+variable "azure_ad_object_id" {
   type        = string
   description = "The object id of the Azure AD Administrator of this SQL Server"
 }

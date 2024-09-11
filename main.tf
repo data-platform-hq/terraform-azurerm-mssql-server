@@ -29,7 +29,7 @@ resource "azurerm_mssql_server" "this" {
 
   azuread_administrator {
     login_username = var.azure_ad_admin_login
-    object_id      = var.azure_ad_admin_object_id
+    object_id      = var.azure_ad_object_id
   }
 }
 
