@@ -73,7 +73,7 @@ No modules.
 | <a name="input_admin_password"></a> [admin\_password](#input\_admin\_password) | The password associated with the admin\_username | `string` | n/a | yes |
 | <a name="input_auto_rotation_enabled"></a> [auto\_rotation\_enabled](#input\_auto\_rotation\_enabled) | Server will continuously check the key vault for any new versions of the key | `bool` | `true` | no |
 | <a name="input_azure_ad_admin_login"></a> [azure\_ad\_admin\_login](#input\_azure\_ad\_admin\_login) | The login username of the Azure AD Administrator of this SQL Server. | `string` | n/a | yes |
-| <a name="input_azure_ad_admin_object_id"></a> [azure\_ad\_admin\_object\_id](#input\_azure\_ad\_admin\_object\_id) | The object id of the Azure AD Administrator of this SQL Server | `string` | n/a | yes |
+| <a name="input_azure_ad_object_id"></a> [azure\_ad\_object\_id](#input\_azure\_ad\_object\_id) | The object id of the Azure AD Administrator of this SQL Server | `string` | n/a | yes |
 | <a name="input_connection_policy"></a> [connection\_policy](#input\_connection\_policy) | The connection policy the server will use: [Default\|Proxy\|Redirect] | `string` | `"Default"` | no |
 | <a name="input_custom_mssql_server_name"></a> [custom\_mssql\_server\_name](#input\_custom\_mssql\_server\_name) | The name of the Microsoft SQL Server | `string` | `null` | no |
 | <a name="input_env"></a> [env](#input\_env) | Environment name | `string` | n/a | yes |
