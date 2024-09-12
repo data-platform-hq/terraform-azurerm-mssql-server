@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/compare/v1.5.0...v1.5.1) (2024-09-12)
+
+
+### Bug Fixes
+
+* change to azure_ad_object_id variable ([14732f3](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/commit/14732f367346d9eaafdaa101c36cad7eaea9f26e))
+
 # [1.5.0](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/compare/v1.4.0...v1.5.0) (2024-09-10)
 
 
