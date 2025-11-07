@@ -1,3 +1,10 @@
+## [1.5.2](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/compare/v1.5.1...v1.5.2) (2025-11-07)
+
+
+### Bug Fixes
+
+* correct error message format for mssql_defender_state variable ([1149cc5](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/commit/1149cc52dfcab51383e47c09d312cb0a74a94add))
+
 ## [1.5.1](https://github.com/data-platform-hq/terraform-azurerm-mssql-server/compare/v1.5.0...v1.5.1) (2024-09-12)
 
 
