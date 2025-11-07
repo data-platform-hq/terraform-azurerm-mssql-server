@@ -89,7 +89,7 @@ No modules.
 | <a name="input_server_version"></a> [server\_version](#input\_server\_version) | Server version | `string` | `"12.0"` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | A mapping of tags to assign to the resource | `map(any)` | `{}` | no |
 | <a name="input_tde_encryption_enabled"></a> [tde\_encryption\_enabled](#input\_tde\_encryption\_enabled) | Boolean flag that enabled Transparent Data Encryption of Server | `bool` | `false` | no |
-| <a name="input_tde_key_permissions"></a> [tde\_key\_permissions](#input\_tde\_key\_permissions) | List of tde key permissions | `list(string)` | <pre>[<br>  "Get",<br>  "WrapKey",<br>  "UnwrapKey",<br>  "GetRotationPolicy",<br>  "SetRotationPolicy"<br>]</pre> | no |
+| <a name="input_tde_key_permissions"></a> [tde\_key\_permissions](#input\_tde\_key\_permissions) | List of tde key permissions | `list(string)` | <pre>[<br/>  "Get",<br/>  "WrapKey",<br/>  "UnwrapKey",<br/>  "GetRotationPolicy",<br/>  "SetRotationPolicy"<br/>]</pre> | no |
 
 ## Outputs
 

@@ -123,6 +123,6 @@ variable "mssql_defender_state" {
 
   validation {
     condition     = var.mssql_defender_state != null ? contains(["Enabled", "Disabled"], var.mssql_defender_state) : true
-    error_message = "The only allowed values for variable are: 'Enabled' or 'Disabled"
+    error_message = "The only allowed values for the variable are 'Enabled' or 'Disabled'."
   }
 }
